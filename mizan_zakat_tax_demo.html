@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مِيزان | منصة المحاسبة الذكية</title>
+<style>
+:root{--bg:#f4f7f5;--ink:#142b25;--muted:#6c7c75;--green:#0d5b46;--green2:#16765b;--mint:#dff1e9;--gold:#c59a45;--line:#e3ebe6;--white:#fff;--shadow:0 14px 40px #153d2b12}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Tahoma,Arial,sans-serif;color:var(--ink)}
+header{background:linear-gradient(120deg,#073e32,#11664e);color:white;padding:22px max(5vw,22px) 30px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:15px;max-width:1180px;margin:auto}
+.logo{font-size:25px;font-weight:800;letter-spacing:.5px}.logo span{color:#e8c879}.tag{font-size:12px;color:#d3e6dc;margin-top:5px}
+.pill{border:1px solid #ffffff55;border-radius:30px;padding:9px 14px;font-size:12px;color:#e8f4ee}
+.hero{max-width:1180px;margin:35px auto 0;display:flex;justify-content:space-between;align-items:center;gap:25px}
+.hero h1{font-size:clamp(27px,4vw,43px);margin:0 0 12px;line-height:1.35}.hero p{color:#d6e9e0;line-height:1.9;margin:0;max-width:620px;font-size:14px}
+.hero-mark{width:118px;height:118px;border:1px solid #ffffff55;border-radius:30px;display:grid;place-items:center;font-size:56px;color:#f0d38e;background:#ffffff0c;transform:rotate(-5deg)}
+main{max-width:1180px;margin:28px auto;padding:0 20px 50px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}
+.stat,.panel,.tool-card{background:white;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+.stat{padding:17px 20px}.stat small{color:var(--muted)}.stat strong{display:block;font-size:22px;margin-top:9px;color:var(--green)}
+.nav{display:flex;gap:8px;overflow:auto;padding:5px 0 17px}
+.nav button{white-space:nowrap;border:1px solid var(--line);background:white;color:var(--muted);padding:12px 17px;border-radius:12px;font-weight:700;cursor:pointer}
+.nav button.active{background:var(--green);color:white;border-color:var(--green)}
+.panel{padding:24px;min-height:350px}.section-title{display:flex;justify-content:space-between;align-items:start;gap:12px;margin-bottom:20px}
+h2{font-size:22px;margin:0 0 7px}.sub{font-size:13px;color:var(--muted);line-height:1.8}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field label{display:block;font-size:13px;font-weight:700;margin-bottom:8px}
+input,select{width:100%;padding:13px;border:1px solid #dce6df;border-radius:11px;background:#fbfdfb;font:inherit;color:var(--ink);outline:none}
+input:focus,select:focus{border-color:var(--green2);box-shadow:0 0 0 3px #16765b15}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.primary,.secondary{border:0;border-radius:11px;padding:13px 20px;font:inherit;font-weight:700;cursor:pointer}
+.primary{background:var(--green);color:white}.secondary{background:var(--mint);color:var(--green)}
+.result{display:none;margin-top:18px;padding:18px;border-radius:14px;background:#edf7f1;border:1px solid #cfe7d9}
+.result strong{font-size:26px;color:var(--green);display:block;margin:8px 0}
+.note{font-size:12px;line-height:1.8;color:var(--muted);margin-top:14px}
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tool-card{padding:20px;cursor:pointer;transition:.2s}.tool-card:hover{transform:translateY(-3px);border-color:#a7cdb9}
+.tool-icon{font-size:28px;background:var(--mint);width:52px;height:52px;display:grid;place-items:center;border-radius:15px;margin-bottom:14px}
+.tool-card h3{margin:0 0 8px;font-size:16px}.tool-card p{font-size:12px;line-height:1.8;color:var(--muted);margin:0}
+.question{padding:17px;background:#f7faf8;border:1px solid var(--line);border-radius:14px;margin:12px 0}
+.question p{margin:0 0 12px;font-weight:700}.choice{display:inline-block;margin:4px 5px 4px 0;padding:9px 13px;border:1px solid var(--line);border-radius:9px;background:white;cursor:pointer}
+.choice:hover{border-color:var(--green);color:var(--green)}
+.feedback{font-size:13px;margin-top:8px;font-weight:700}
+footer{text-align:center;color:var(--muted);font-size:11px;padding:25px}
+@media(max-width:720px){.hero-mark{display:none}.stats{grid-template-columns:1fr}.tools{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.panel{padding:18px}.hero{margin-top:25px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="top"><div><div class="logo">مِيزان<span>.</span></div><div class="tag">منصة المحاسبة الذكية للزكاة والضريبة</div></div><div class="pill">نسخة تعليمية تفاعلية</div></div>
+ <div class="hero"><div><h1>قرارات مالية أوضح،<br>بخطوات أذكى.</h1><p>مساحة تطبيقية تساعدك على فهم الالتزامات المالية، وتجربة الحسابات، واكتشاف الأخطاء من خلال أدوات مبسطة وحالات تحاكي بيئة المنشآت.</p></div><div class="hero-mark">مِ</div></div>
+</header>
+<main>
+ <div class="stats">
+  <div class="stat"><small>الأدوات التفاعلية</small><strong>03 أدوات</strong></div>
+  <div class="stat"><small>مجالات التطبيق</small><strong>الزكاة والضريبة</strong></div>
+  <div class="stat"><small>وضع المنصة</small><strong>تجربة تعليمية</strong></div>
+ </div>
+ <div class="nav">
+  <button class="active" data-tab="home">الرئيسية</button>
+  <button data-tab="vat">حاسبة الضريبة</button>
+  <button data-tab="zakat">تقدير الزكاة</button>
+  <button data-tab="audit">مختبر الفواتير</button>
+ </div>
+ <section id="home" class="panel">
+  <div class="section-title"><div><h2>مرحبًا بك في مِيزان</h2><div class="sub">اختاري الأداة وابدئي التطبيق مباشرة.</div></div><span class="pill" style="background:#edf7f1;color:#176047;border-color:#d6eadf">ابدئي التجربة</span></div>
+  <div class="tools">
+   <div class="tool-card" onclick="showTab('vat')"><div class="tool-icon">🧾</div><h3>حاسبة ضريبة القيمة المضافة</h3><p>احسبي الضريبة أو استخرجي المبلغ قبل الضريبة من إجمالي الفاتورة.</p></div>
+   <div class="tool-card" onclick="showTab('zakat')"><div class="tool-icon">⚖️</div><h3>تقدير الزكاة</h3><p>جرّبي تقديرًا مبسطًا للزكاة باستخدام وعاء افتراضي تدخلينه بنفسك.</p></div>
+   <div class="tool-card" onclick="showTab('audit')"><div class="tool-icon">🔎</div><h3>مختبر الفواتير</h3><p>اختبري فهمك من خلال مواقف قصيرة لاكتشاف الأخطاء في الفواتير.</p></div>
+  </div>
+  <p class="note">هذه المنصة نموذج تعليمي تجريبي، وليست نظامًا رسميًا أو بديلًا عن اللوائح والأدلة المعتمدة لدى هيئة الزكاة والضريبة والجمارك.</p>
+ </section>
+ <section id="vat" class="panel" style="display:none">
+  <div class="section-title"><div><h2>حاسبة ضريبة القيمة المضافة</h2><div class="sub">أدخلي قيمة العملية وحددي نوع المبلغ.</div></div><div class="tool-icon">🧾</div></div>
+  <div class="grid">
+   <div class="field"><label>المبلغ (ريال سعودي)</label><input id="vatAmount" type="number" min="0" placeholder="مثال: 1000"></div>
+   <div class="field"><label>نوع المبلغ</label><select id="vatMode"><option value="before">المبلغ قبل الضريبة</option><option value="after">المبلغ شامل الضريبة</option></select></div>
+  </div>
+  <div class="actions"><button class="primary" onclick="calcVat()">احسبي الضريبة</button><button class="secondary" onclick="resetVat()">مسح</button></div>
+  <div class="result" id="vatResult"></div>
+  <p class="note">تم استخدام نسبة 15% كمعدل قياسي في هذا المثال التعليمي. قد تختلف المعاملة حسب نوع التوريد وحالته الضريبية.</p>
+ </section>
+ <section id="zakat" class="panel" style="display:none">
+  <div class="section-title"><div><h2>أداة تقدير الزكاة</h2><div class="sub">محاكاة مبسطة لتوضيح أثر الوعاء ومعدل الحساب.</div></div><div class="tool-icon">⚖️</div></div>
+  <div class="grid">
+   <div class="field"><label>الوعاء الزكوي الافتراضي (ريال)</label><input id="zakatBase" type="number" min="0" placeholder="مثال: 200000"></div>
+   <div class="field"><label>طريقة السنة</label><select id="zakatYear"><option value="2.5">سنة هجرية — 2.5%</option><option value="2.577">سنة ميلادية — 2.577%</option></select></div>
+  </div>
+  <div class="actions"><button class="primary" onclick="calcZakat()">احسبي التقدير</button><button class="secondary" onclick="document.getElementById('zakatBase').value='';document.getElementById('zakatResult').style.display='none'">مسح</button></div>
+  <div class="result" id="zakatResult"></div>
+  <p class="note">هذا تقدير توضيحي على وعاء افتراضي ومعدل مختار، ولا يقوم بتحديد الوعاء الزكوي نظاميًا. تحديد الوعاء الفعلي يتطلب تصنيف البنود وتطبيق القواعد والاستثناءات ذات الصلة.</p>
+ </section>
+ <section id="audit" class="panel" style="display:none">
+  <div class="section-title"><div><h2>مختبر الفواتير</h2><div class="sub">كوني المدققة المالية واكتشفي المعالجة الصحيحة.</div></div><div class="tool-icon">🔎</div></div>
+  <div class="question"><p>1. منشأة أصدرت فاتورة خاضعة للنسبة الأساسية بقيمة 1,000 ريال قبل الضريبة. كم تبلغ الضريبة وفق المثال؟</p>
+   <button class="choice" onclick="answer(this,false)">100 ريال</button><button class="choice" onclick="answer(this,true)">150 ريال</button><button class="choice" onclick="answer(this,false)">200 ريال</button><div class="feedback"></div></div>
+  <div class="question"><p>2. هل يكفي ضرب أي مبلغ في 2.5% لتحديد الزكاة المستحقة على أي منشأة؟</p>
+   <button class="choice" onclick="answer(this,false)">نعم، دائمًا</button><button class="choice" onclick="answer(this,true)">لا، يجب تحديد الوعاء أولًا</button><div class="feedback"></div></div>
+  <div class="question"><p>3. فاتورة لا تتضمن بيانات أساسية مطلوبة. ما التصرف الأفضل؟</p>
+   <button class="choice" onclick="answer(this,true)">التحقق من متطلبات الفاتورة وتصحيحها</button><button class="choice" onclick="answer(this,false)">اعتمادها دون مراجعة</button><div class="feedback"></div></div>
+ </section>
+</main>
+<footer>مِيزان — مشروع تطبيقي تعليمي لمادة محاسبة الزكاة والدخل</footer>
+<script>
+function showTab(id){document.querySelectorAll('main section').forEach(s=>s.style.display=s.id===id?'block':'none');document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+const fmt=n=>new Intl.NumberFormat('ar-SA',{maximumFractionDigits:2}).format(n);
+function calcVat(){let a=Number(document.getElementById('vatAmount').value),m=document.getElementById('vatMode').value,r=document.getElementById('vatResult');if(!a||a<0){r.style.display='block';r.innerHTML='يرجى إدخال مبلغ صحيح أكبر من صفر.';return}let base=m==='before'?a:a/1.15,tax=m==='before'?a*.15:a-base,total=base+tax;r.style.display='block';r.innerHTML=`<div>قيمة المبلغ قبل الضريبة</div><strong>${fmt(base)} ر.س</strong><div>قيمة الضريبة: <b>${fmt(tax)} ر.س</b></div><div>الإجمالي شامل الضريبة: <b>${fmt(total)} ر.س</b></div>`}
+function resetVat(){document.getElementById('vatAmount').value='';document.getElementById('vatResult').style.display='none'}
+function calcZakat(){let a=Number(document.getElementById('zakatBase').value),rate=Number(document.getElementById('zakatYear').value),r=document.getElementById('zakatResult');r.style.display='block';if(!a||a<0){r.innerHTML='يرجى إدخال وعاء افتراضي صحيح أكبر من صفر.';return}r.innerHTML=`التقدير الحسابي وفق المدخلات<strong>${fmt(a*rate/100)} ر.س</strong><div>الوعاء الافتراضي: ${fmt(a)} ر.س — المعدل المختار: ${rate}%</div>`}
+function answer(btn,ok){let box=btn.parentElement;box.querySelectorAll('.choice').forEach(b=>b.disabled=true);let f=box.querySelector('.feedback');f.textContent=ok?'إجابة صحيحة! أحسنتِ.':'ليست الإجابة الصحيحة. راجعي الفكرة وحاولي مرة أخرى.';f.style.color=ok?'#14734f':'#b04a3c';}
+</script>
+</body></html>
